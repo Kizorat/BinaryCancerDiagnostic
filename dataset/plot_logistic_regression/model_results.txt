@@ -1,0 +1,32 @@
+RISULTATI MODELLO REGRESSIONE LOGISTICA
+Accuratezza: 0.9766
+AUC-ROC: 0.9969
+
+Matrice di Confusione:
+[[106   1]
+ [  3  61]]
+
+Report di Classificazione:
+              precision    recall  f1-score   support
+
+ Benigno (B)       0.97      0.99      0.98       107
+ Maligno (M)       0.98      0.95      0.97        64
+
+    accuracy                           0.98       171
+   macro avg       0.98      0.97      0.97       171
+weighted avg       0.98      0.98      0.98       171
+
+Top 10 Feature Importance:
+            Feature  Coefficient  Abs_Coefficient
+      texture_worst     1.418841         1.418841
+          radius_se     1.292352         1.292352
+     symmetry_worst     1.107390         1.107390
+     compactness_se    -0.962680         0.962680
+            area_se     0.942671         0.942671
+         area_worst     0.880043         0.880043
+concave points_mean     0.867400         0.867400
+    concavity_worst     0.853606         0.853606
+       radius_worst     0.846577         0.846577
+       perimeter_se     0.818572         0.818572
+Punteggi cross-validation (5-fold): [0.9375     1.         0.9875     0.97468354 0.94936709]
+Accuratezza media CV: 0.9698 (+/- 0.0466)
