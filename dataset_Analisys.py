@@ -2,6 +2,9 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from pandas.plotting import scatter_matrix
+import seaborn as sns
+
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
@@ -163,6 +166,20 @@ y = y[mask]
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
+
+#PAIRPLOT
+pair_df = df[main_features + ["diagnosis"]].copy()
+pair_df["diagnosis"] = pair_df["diagnosis"].map({0: "Benigno", 1: "Maligno"})
+
+g = sns.pairplot(
+    pair_df,
+    hue="diagnosis",
+    diag_kind="kde"
+)
+
+g.fig.suptitle("Pairplot – feature principali (Benigno vs Maligno)", y=1.02)
+g.savefig(os.path.join(FIG_DIR, "pairplot_main_features.png"), dpi=200, bbox_inches="tight")
+plt.close(g.fig)
 
 #ANALISI DELLA PCA/PCA2D
 pca = PCA()

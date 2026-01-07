@@ -1,0 +1,33 @@
+RISULTATI MODELLO SVM
+Accuratezza: 0.9942
+AUC-ROC: 0.9988
+
+Matrice di Confusione:
+[[107   0]
+ [  1  63]]
+
+Report di Classificazione:
+              precision    recall  f1-score   support
+
+ Benigno (B)       0.99      1.00      1.00       107
+ Maligno (M)       1.00      0.98      0.99        64
+
+    accuracy                           0.99       171
+   macro avg       1.00      0.99      0.99       171
+weighted avg       0.99      0.99      0.99       171
+
+
+Top 10 Feature Importance:
+             Feature  Coefficient  Abs_Coefficient
+       texture_worst     0.022768         0.022768
+        radius_worst     0.027803         0.027803
+      symmetry_worst     0.015002         0.015002
+concave points_worst     0.027756         0.027756
+     perimeter_worst     0.026313         0.026313
+     concavity_worst     0.021103         0.021103
+ concave points_mean     0.021907         0.021907
+          area_worst     0.019698         0.019698
+    smoothness_worst     0.009614         0.009614
+      perimeter_mean     0.020128         0.020128
+Punteggi cross-validation (5-fold): [0.9625     0.9875     0.9875     0.97468354 0.93670886]
+Accuratezza media CV: 0.9698 (+/- 0.0379)
